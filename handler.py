@@ -33,8 +33,6 @@ class Handler():
     """
     @staticmethod
     def all():
-
-        # get latest files
         files = glob.glob("dataFiles/*")
         multiple = len(files) > 1
 
@@ -42,12 +40,10 @@ class Handler():
             current = max(files, key=os.path.getctime)
             files.remove(current)
             previous = max(files, key=os.path.getctime)
-
         else:
             current = files[0]
 
         l, c = [], []
-
         
         if multiple:
             with open(previous, "r") as f:
