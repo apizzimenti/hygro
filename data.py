@@ -9,7 +9,7 @@ def now():
     ltime = datetime.datetime.now()
     data = {
         "humidity": str(int(humidity)) + "%",
-        "temperature": str((1.8 * temp) + 32) + u"\u00b0",
+        "temperature": str((1.8 * temp) + 32),
         "time": str(ltime)
     }
 

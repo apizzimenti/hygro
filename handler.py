@@ -71,6 +71,15 @@ class Handler():
             return f.readlines()[-1].strip()
 
     
+    @staticmethod
+    def formatted():
+        html = None
+        with open("www/index.html", "r") as f:
+            html = f.read()
+
+        data = json.loads(Handler.latest())
+        return html.format(data["temperature"], data["humidity"], data["time"])
+    
     """
         Updates the url of the current data file, resets the point counter, and
         saves the previous url.
